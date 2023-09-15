@@ -1,0 +1,12 @@
+# Please see the documentation for all configuration options:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/" # Location of requirements.txt
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+    # Disable version updates, only allow security updates
+    open-pull-requests-limit: 0

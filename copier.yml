@@ -1,0 +1,25 @@
+_imports:
+  parse: packaging.version.parse
+
+# Questions for the user
+project_name:
+  type: str
+  help: "What is the name of the new project? (no white spaces, no caps)"
+  validators:
+    - "!expr: ' ' in project_name"
+    - "!expr: not project_name.islower()"
+python_version:
+  type: str
+  help: "Which Python version do you want to use? Minimum 3.9"
+  default: "3.10"
+  validators:
+    - "!expr: parse(_python_version) < parse('3.9')"
+project_description:
+  type: str
+  help: "What is the description of the new project?"
+author_name:
+  type: str
+  help: "Who is the author?"
+author_email:
+  type: str
+  help: "What is the email address of the author?"
