@@ -1,25 +1,33 @@
-# pip-tools
-We use [pip-tools](https://pypi.org/project/pip-tools/) to keep our requirements pinned properly.
+# Setting up the development environment
 
-We define our requirements as usual in requirements.in and requirements-dev.in
-`pip-compile` will generate a requirements.txt
-`pip-compile requirements-dev.in` will generate requirements-dev.txt
+1. Create a new virtual environment and activate it:
+    ```bash
+    python -m venv .venv
+    source .venv/bin/activate
+    ```
+2. Install development packages (linters, etc.):
+    ```bash
+    pip install -r requirements-dev.txt
+    ```
+3. Install pre-commit hooks:
+    ```bash
+    pre-commit install
+    ```
 
-Both: in and .txt files will be tracked by git.
-We keep them synced with a pre-commit hook.
+# Dependency management
 
-To install these dependencies, we use the other command of pip-tools: `pip-sync`.
-pip-sync ingests the generated .txt files:
-`pip-sync requirements-dev.txt`
+[pip-tools](https://pypi.org/project/pip-tools/) is used to keep requirements
+pinned properly.
 
-# pre-commit
-Configured in the file `.pre-commit-config.yaml`. Use `pre-commit install` to install the hooks
-For pre-commit to work with pyright, we have to install the dependencies in requirements.txt in a local
-virtual env. Following: https://github.com/RobertCraigie/pyright-python#pre-commit
+Define requirements as usual in the `requirements-*.in` files and
+`pip-compile` will generate the corresponding txt file. E.g.,
+`pip-compile requirements-dev.in` will generate requirements-dev.txt.
 
+Both `.in` and `.txt` files will be tracked by git, and
+they are synced with a pre-commit hook (i.e., `pip-compile` is run
+automatically during each commit).
+
+To install the dependencies, use `pip-sync`, e.g.,
+```bash
+pip-sync requirements-dev.txt`
 ```
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
-
