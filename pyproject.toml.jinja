@@ -65,7 +65,7 @@ line-length = 88
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
 # Assume Python {{ python_version }}.
-target-version = ["py{{ python_version | replace('.', '') }}"]
+target-version = "py{{ python_version | replace('.', '') }}"
 
 [tool.pyright]
 # For pre-commit to work. See contributing.md#pre-commit
