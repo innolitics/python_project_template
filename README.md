@@ -10,8 +10,8 @@ It includes:
     - isort
 - Linters
     - ruff
-- Static analyzers
-    - pyright
+- Type checkers
+    - mypy
 - pre-commit adds hooks for:
     - check-yaml
     - check-case-conflict
@@ -31,6 +31,7 @@ It includes:
     - ruff
     - black
     - pytest
+    - mypy
 
 ## Usage
 

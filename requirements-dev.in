@@ -1,8 +1,8 @@
-black>=23.7.0
-isort>=5.12.0
-pre-commit>=3.4
-pip-tools>=7.3.0
+black>=24.1.1
 build>=1.0.3
-pyright>=1.1.327
-ruff>=0.0.289
+isort>=5.12.0
+mypy>=1.8.0
+pip-tools>=7.3.0
+pre-commit>=3.4
 pytest>=7.4
+ruff>=0.0.289
