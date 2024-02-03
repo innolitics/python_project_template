@@ -70,15 +70,31 @@ dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 # Assume Python {{ python_version }}.
 target-version = "py{{ python_version | replace('.', '') }}"
 
-[tool.pyright]
-# For pre-commit to work. See contributing.md#pre-commit
-venvPath = "."
-venv = ".venv"
 
-exclude = ["**/node_modules",
-    "**/__pycache__",
-]
-defineConstant = { DEBUG = true }
+[tool.mypy]
+python_version = "{{python_version}}"
+python_executable = ".venv/bin/python"
+# Warns about per-module sections in the config file that do not match any files processed when invoking mypy.
+warn_unused_configs = true
+# Shows a warning when returning a value with type Any from a function declared with a non-Any return type.
+warn_return_any = true
+# Changes the treatment of arguments with a default value of None by not implicitly making their type Optional.
+no_implicit_optional = true
+# Prohibit equality checks, identity checks, and container checks between non-overlapping types.
+strict_equality = true
+# Warns about casting an expression to its inferred type.
+warn_redundant_casts = true
+# No error on unneeded # type: ignore comments.
+warn_unused_ignores = true
+implicit_reexport = true
+check_untyped_defs = true
+disallow_any_generics = true
+disallow_incomplete_defs = true
 
-pythonVersion = "{{ python_version }}"
-strict = true
+
+[[tool.mypy.overrides]]
+# module = ["wandb.*", "fastprogress.*", "sklearn.*"]
+# follow_imports = "skip"
+# follow_imports_for_stubs = true
+# Suppresses error messages about imports that cannot be resolved.
+# ignore_missing_imports = true

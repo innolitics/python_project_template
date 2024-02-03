@@ -4,7 +4,7 @@
 #
 #    pip-compile requirements-dev.in
 #
-black==23.9.1
+black==24.1.1
     # via -r requirements-dev.in
 build==1.0.3
     # via
@@ -16,52 +16,54 @@ click==8.1.7
     # via
     #   black
     #   pip-tools
-distlib==0.3.7
+distlib==0.3.8
     # via virtualenv
-filelock==3.12.4
+filelock==3.13.1
     # via virtualenv
-identify==2.5.28
+identify==2.5.33
     # via pre-commit
 iniconfig==2.0.0
     # via pytest
-isort==5.12.0
+isort==5.13.2
+    # via -r requirements-dev.in
+mypy==1.8.0
     # via -r requirements-dev.in
 mypy-extensions==1.0.0
-    # via black
-nodeenv==1.8.0
     # via
-    #   pre-commit
-    #   pyright
-packaging==23.1
+    #   black
+    #   mypy
+nodeenv==1.8.0
+    # via pre-commit
+packaging==23.2
     # via
     #   black
     #   build
     #   pytest
-pathspec==0.11.2
+pathspec==0.12.1
     # via black
 pip-tools==7.3.0
     # via -r requirements-dev.in
-platformdirs==3.10.0
+platformdirs==4.2.0
     # via
     #   black
     #   virtualenv
-pluggy==1.3.0
+pluggy==1.4.0
     # via pytest
-pre-commit==3.4.0
+pre-commit==3.6.0
     # via -r requirements-dev.in
 pyproject-hooks==1.0.0
     # via build
-pyright==1.1.327
-    # via -r requirements-dev.in
-pytest==7.4.2
+pytest==8.0.0
     # via -r requirements-dev.in
 pyyaml==6.0.1
     # via pre-commit
-ruff==0.0.289
+ruff==0.1.15
     # via -r requirements-dev.in
-virtualenv==20.24.5
+typing-extensions==4.9.0
+    # via mypy
+virtualenv==20.25.0
     # via pre-commit
-wheel==0.41.2
+wheel==0.42.0
     # via pip-tools
 
 # The following packages are considered to be unsafe in a requirements file:
